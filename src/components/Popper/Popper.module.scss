@@ -1,0 +1,14 @@
+.wrapper {
+    width: 100%;
+    max-height: min((100vh - 96px) - 60px, 734px);
+    min-height: 120px;
+    width: 361px;
+    padding-top: 8px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
