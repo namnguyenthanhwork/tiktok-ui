@@ -1,0 +1,28 @@
+// menu wrapper
+.menu-list {
+    width: 224px;
+
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-popper {
+    padding-bottom: 8px;
+}
+
+// menu items
+.menu-item {
+    width: 100%;
+    justify-content: unset;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    border-radius: 0;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    -ms-border-radius: 10;
+    -o-border-radius: 10;
+}
