@@ -14,15 +14,38 @@
 // menu items
 .menu-item {
     width: 100%;
-    justify-content: unset;
-
+    justify-content: flex-start;
+    line-height: 1.8rem;
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
     }
-
     border-radius: 0;
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    -ms-border-radius: 10;
-    -o-border-radius: 10;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+// header
+.header {
+    position: relative;
+    height: 50px;
+}
+
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }

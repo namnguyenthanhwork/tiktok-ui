@@ -12,8 +12,8 @@ import {
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Menu from '~/components/Popper/Menu';
 import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
@@ -22,7 +22,25 @@ import images from '~/assets/images';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
-    { icon: <FontAwesomeIcon icon={faEarthAsia} />, title: 'English' },
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Languages',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng việt',
+                },
+            ],
+        },
+    },
     { icon: <FontAwesomeIcon icon={faCircleQuestion} />, title: 'Feedback and help', to: '/feedback' },
     { icon: <FontAwesomeIcon icon={faKeyboard} />, title: 'Keyboard shortcuts' },
 ];
@@ -35,6 +53,15 @@ function Header() {
             setSearchResult([]);
         }, 3000);
     }, []);
+
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                break;
+            default:
+        }
+    };
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -68,7 +95,7 @@ function Header() {
                     <Button disabled>Upload</Button>
                     <Button primary>Login</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
